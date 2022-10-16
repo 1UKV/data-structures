@@ -1,23 +1,35 @@
 def binary_search(sequence, item):
     begin_index=0
     end_index=1
-        
-        
-        
+    
     while begin_index<=end_index:
         midpoint= begin_index + (end_index-begin_index)//2
-        midpoint_value = sequence[midpoint]
+        midpoint_value = sequence[midpoint]  
+            
+            
         if midpoint_value == item:
-            return midpoint 
+            return midpoint  
         elif item<midpoint_value:
             end_index = midpoint-1
         else:
             begin_index= midpoint+1
-            end_index=midpoint+2
+            end_index=end_index*2
+            while True:
+                try:
+                    value=sequence[end_index]
+                except:
+                    end_index=end_index-1
+                else:
+                    break
+
+                    
+        
     return None
 
+
 sequence_1=[1,8,9,11,15,17,19,24,25,26,30,34,40,41,45,46,49,53,55,56,57,59,68,79,80,87,90]
-item_1 = 5
+item_1 = 11
+
 
 result =binary_search(sequence_1,item_1)
 if result == None:
