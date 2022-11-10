@@ -1,2 +1,47 @@
-ASSIGNMENT 5 
-sorting 
+#BUBBLE SORT
+
+def bubblesort(sequence):
+    no_of_swaps=0
+    no_of_comparisons=0
+    for j in range(len(sequence)-1):
+        swapped= False
+    
+        for i in range(len(sequence)-1-j):
+            no_of_comparisons+=1
+            if sequence[i]>sequence[i+1]:
+                temp=sequence[i]
+                sequence[i]=sequence[i+1]
+                sequence[i+1]=temp
+                swapped=True
+                no_of_swaps+= 1
+        if swapped == False:
+            print("no. of comparisons for bubble sort = ",no_of_comparisons)
+            print("no. of swaps for bubble sort = ",no_of_swaps)
+            break
+sequence=[87,98,65,35,69,95,48,25,41]
+
+bubblesort(sequence)
+print("Sorted by bubble sort: ",sequence)
+
+#SELECTION SORT
+
+def selectionSort(sequence):
+    no_of_swaps=0
+    no_of_comparisons=0
+    for j in range(len(sequence)):
+        minimum=j
+        
+        for i in range(minimum+1, len(sequence)):
+            no_of_comparisons+=1
+            if sequence[i]<sequence[minimum]:
+                minimum=i
+                
+        if j!=minimum:
+            (sequence[minimum],sequence[j])=(sequence[j],sequence[minimum])
+            no_of_swaps+=1
+    print("no. of comparisons for selection sort = ",no_of_comparisons)
+    print("no. of swaps for selection sort = ",no_of_swaps)
+    
+sequence2=[87,98,65,35,69,95,48,25,41]                
+selectionSort(sequence2)
+print("Sorted by selection sort: ",sequence2)
