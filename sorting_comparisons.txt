@@ -45,3 +45,15 @@ def selectionSort(sequence):
 sequence2=[87,98,65,35,69,95,48,25,41]                
 selectionSort(sequence2)
 print("Sorted by selection sort: ",sequence2)
+
+
+BONUS QUESTION
+
+TIME COMPLEXITY OF BUBBLE SORT
+   From the above code of BUBBLE SORT we can see that there are two while loops which will we executed.First while loop will run n-1 times and second while      loop will run n-2 times and so on till 1 time.
+   Time Complexity=(n-1)+(n-2)+(n-3)....+2+1=(n-1)(n)/2 = O(n^2)
+
+TIME COMPLEXITY OF SELECTION SORT
+    In selection sort the main time consuming task is finding minimum element from the array.We have to scan all the elements of the array to find the       minimum element. With reference to the above code of SELECTION SORT,first we will search for minimum element in array of size n,then in the same array of   size n-1,and so on till array of size 1.
+    Time Complexity=(n)+(n-1)+(n-2)...1=(n)(n+1)/2 = O(n^2)
+
